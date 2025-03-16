@@ -133,3 +133,47 @@ hr {
     width: 80%;
     margin: 20px auto;
 }
+
+/* General adjustments for smaller screens */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .profile img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .profile p {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+
+    .button {
+        width: 100%;
+        font-size: 1.2em;
+        padding: 12px;
+        margin: 8px 0;
+    }
+
+    .button div {
+        gap: 8px;
+    }
+
+    .button img {
+        height: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    hr {
+        width: 90%;
+    }
+}
