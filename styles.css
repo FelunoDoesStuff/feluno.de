@@ -83,7 +83,7 @@ body {
     }
 }
 
-/* App-specific colors */
+
 #bsky { background: #1185FE; }
 #discord { background: #5865F2; }
 #mastodon { background: #6364FF; }
@@ -94,19 +94,18 @@ body {
 #github { background: #181717; }
 #strecken { background: #00A67E; }
 
-/* Hover effect for app-specific buttons with color shift and highlight */
 #bsky:hover, #discord:hover, #mastodon:hover, #tfnet:hover, #reddit:hover, 
 #insta:hover, #telegram:hover, #github:hover, #strecken:hover {
-    background: #808080; /* Gray color on hover */
-    transform: scale(1.05); /* Slightly enlarge the button on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow to highlight the button */
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    background: #808080; 
+    transform: scale(1.05); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
-/* Optional: Add a smooth background color transition to create a color shift effect */
+
 #bsky, #discord, #mastodon, #tfnet, #reddit, 
 #insta, #telegram, #github, #strecken {
-    transition: background 0.3s ease; /* Smooth background transition */
+    transition: background 0.3s ease;
 }
 
 h1 {
