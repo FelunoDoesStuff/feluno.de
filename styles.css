@@ -134,10 +134,40 @@ hr {
     margin: 20px auto;
 }
 
-/* General adjustments for smaller screens */
+/* General improvements for text sizing */
+h1 {
+    font-size: clamp(1.8em, 5vw, 2.5em);
+}
+
+h2 {
+    font-size: clamp(1.5em, 4vw, 2em);
+}
+
+.profile p {
+    font-size: clamp(1em, 4vw, 1.2em);
+}
+
+/* Improve button size & layout */
+.button {
+    width: 90%; /* Use most of the screen width */
+    max-width: 400px;
+    padding: 12px;
+    font-size: clamp(1.2em, 4vw, 1.5em);
+}
+
+/* Ensure proper spacing */
+.button div {
+    gap: 12px;
+}
+
+.button img {
+    height: clamp(20px, 5vw, 24px);
+}
+
+/* Optimize layout for small screens */
 @media (max-width: 600px) {
     body {
-        padding: 10px;
+        padding: 10px; /* Reduce excessive padding */
     }
 
     .profile img {
@@ -145,32 +175,8 @@ hr {
         height: 140px;
     }
 
-    .profile p {
-        font-size: 1em;
-        padding: 0 10px;
-    }
-
     .button {
         width: 100%;
-        font-size: 1.2em;
-        padding: 12px;
-        margin: 8px 0;
-    }
-
-    .button div {
-        gap: 8px;
-    }
-
-    .button img {
-        height: 20px;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.6em;
     }
 
     hr {
