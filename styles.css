@@ -7,7 +7,7 @@ body {
     background-size: 400% 400%;
     animation: gradientBG 10s ease infinite;
     font-family: Arial, sans-serif;
-    color: #00DBFF;
+    color: #007BFF;
     margin: 0;
     padding: 20px;
     position: relative;
@@ -15,9 +15,18 @@ body {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #222222;
-        color: white;
+        background: linear-gradient(45deg, #000000, #222222);
+        animation: gradientBG 10s ease infinite;
+        color: #00CBFF;
     }
+
+    h1 {
+        background: #00CBFF;
+    }
+
+    h2 {
+        background: #00CBFF;
+      }
 }
 
 @keyframes gradientBG {
