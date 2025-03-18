@@ -19,14 +19,6 @@ body {
         animation: gradientBG 10s ease infinite;
         color: #00CBFF;
     }
-
-    h1 {
-        background: #00CBFF;
-    }
-
-    h2 {
-        background: #00CBFF;
-      }
 }
 
 @keyframes gradientBG {
