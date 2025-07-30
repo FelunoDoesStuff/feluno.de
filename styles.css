@@ -1,185 +1,142 @@
+/* =======================
+   Basis-Design (Light Mode)
+   ======================= */
+   :root {
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --card-bg: white;
+    --button-text: white;
+    --shadow-color: rgba(0,0,0,0.1);
+}
+
+/* Dark Mode Farben */
+body.dark {
+    --bg-color: #121212;
+    --text-color: #eee;
+    --card-bg: #1e1e1e;
+    --shadow-color: rgba(255,255,255,0.05);
+}
+
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(45deg, #cccccc, #ffffff);
-    background-size: 400% 400%;
-    animation: gradientBG 10s ease infinite;
     font-family: Arial, sans-serif;
-    color: #007BFF;
+    background: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
     margin: 0;
     padding: 20px;
-    position: relative;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.profile img {
-    width: 175px;
-    height: 175px;
-    border-radius: 50%;
-    padding: 6px;
-    border: 3px solid transparent;
-    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
-    background-size: 400% 400%;
-    background-clip: padding-box;
-    animation: rainbowBorder 6s linear infinite;
-}
-
-@keyframes rainbowBorder {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.profile p {
-    max-width: 600px;
-    font-size: 1.2em;
-    margin-top: 10px;
-}
-
-.button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    max-width: 400px;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: white;
-    transition: 0.3s;
-    background-clip: border-box;
-}
-
-.button div {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.button img {
-    height: 24px;
-}
-
-@media (max-width: 600px) {
-    .button {
-        width: 90%;
+/* =======================
+   Automatischer Dark Mode
+   ======================= */
+@media (prefers-color-scheme: dark) {
+    body:not(.light) {
+        background: #121212;
+        color: #eee;
     }
 }
 
-
-#bsky { background: #1185FE; }
-#discord { background: #5865F2; }
-#mastodon { background: #6364FF; }
-#tfnet { background: #821655; }
-#reddit { background: #FF4500; }
-#insta { background: #E4405F; }
-#telegram { background: #0088cc; }
-#github { background: #181717; }
-#strecken { background: #00A67E; }
-
-#bsky:hover, #discord:hover, #mastodon:hover, #tfnet:hover, #reddit:hover, 
-#insta:hover, #telegram:hover, #github:hover, #strecken:hover {
-    background: #808080; 
-    transform: scale(1.05); 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
-}
-
-
-#bsky, #discord, #mastodon, #tfnet, #reddit, 
-#insta, #telegram, #github, #strecken {
+/* =======================
+   Profilbereich
+   ======================= */
+.profile {
+    max-width: 400px;
+    margin: 0 auto 30px;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px var(--shadow-color);
     transition: background 0.3s ease;
 }
 
-h1 {
-    background: #007BFF;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 2.5em;
-    font-weight: bold;
+/* Regenbogen-Ring um Profilbild (ohne Rotation) */
+.profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px 0;
+    padding: 5px;
+    background: conic-gradient(red, orange, yellow, green, cyan, blue, violet, red);
 }
 
-h2 {
-    font-size: 2em;
-}
-
-#bsky, #discord, #mastodon, #tfnet, #reddit, #insta, #telegram, #github, #strecken {
-    padding: 10px;
-    border-radius: 25px;
-    color: white;
-}
-
-hr {
+/* =======================
+   Dark/Light Toggle
+   ======================= */
+#mode-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    cursor: pointer;
     border: none;
-    height: 2px;
-    background-color: #007BFF;
-    width: 80%;
-    margin: 20px auto;
+    background: #888;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+#mode-toggle:hover {
+    background: #555;
 }
 
-/* General improvements for text sizing */
-h1 {
-    font-size: clamp(1.8em, 5vw, 2.5em);
+/* =======================
+   Buttons (Links)
+   ======================= */
+a.button {
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
 }
 
-h2 {
-    font-size: clamp(1.5em, 4vw, 2em);
+a.button div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 200px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    color: var(--button-text);
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.profile p {
-    font-size: clamp(1em, 4vw, 1.2em);
+a.button img {
+    height: 24px;
 }
 
-/* Improve button size & layout */
-.button {
-    width: 90%; /* Use most of the screen width */
-    max-width: 400px;
-    padding: 12px;
-    font-size: clamp(1.2em, 4vw, 1.5em);
+/* Hover Effekt */
+#bsky:hover, #discord:hover, #mastodon:hover, #tfnet:hover, #reddit:hover, 
+#insta:hover, #snapchat:hover, #telegram:hover, #github:hover, #strecken:hover {
+    background: #808080; 
+    transform: scale(1.05); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
-/* Ensure proper spacing */
-.button div {
-    gap: 12px;
-}
+/* Individuelle Farben */
+#bsky    { background: #1185FE; }
+#discord { background: #5865F2; }
+#mastodon{ background: #6364FF; }
+#tfnet   { background: #821655; }
+#reddit  { background: #FF4500; }
+#insta   { background: #E4405F; }
+#snapchat{ background: #FFFB01; color: black; }
+#telegram{ background: #0088cc; }
+#github  { background: #181717; }
+#strecken{ background: #00A67E; }
 
-.button img {
-    height: clamp(20px, 5vw, 24px);
-}
-
-/* Optimize layout for small screens */
-@media (max-width: 600px) {
-    body {
-        padding: 10px; /* Reduce excessive padding */
-    }
-
-    .profile img {
-        width: 140px;
-        height: 140px;
-    }
-
-    .button {
-        width: 100%;
-    }
-
-    hr {
+/* =======================
+   Responsive
+   ======================= */
+@media (max-width: 500px) {
+    a.button div {
         width: 90%;
+        font-size: 16px;
     }
 }

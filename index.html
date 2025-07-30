@@ -6,6 +6,22 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
+    <button id="mode-toggle">🌙 Dark Mode</button>
+
+    <script>
+    const toggleBtn = document.getElementById("mode-toggle");
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        document.body.classList.toggle("light");
+
+        if (document.body.classList.contains("dark")) {
+            toggleBtn.textContent = "☀️ Light Mode";
+        } else {
+            toggleBtn.textContent = "🌙 Dark Mode";
+        }
+    });
+    </script>
+
     <div class="profile">
 		<h1>Hi, ich bin Feluno!</h1>
         <img src="profile.jpg" alt="Profile Picture">
@@ -40,14 +56,19 @@
             <img src="logos/tfnet-logo.png" alt="tf|net Logo">tf|net
         </div>
     </a>
-    <a href="https://www.reddit.com/user/-Feluno-/" class="button" target="_blank">
+<!--    <a href="https://www.reddit.com/user/-Feluno-/" class="button" target="_blank">
         <div id="reddit">
             <img src="logos/reddit-logo.png" alt="Reddit Logo">Reddit
         </div>
-    </a>
+    </a> -->
     <a href="https://www.instagram.com/feluno.de" class="button" target="_blank">
         <div id="insta">
             <img src="logos/instagram-logo.png" alt="Instagram Logo">Insta
+        </div>
+    </a>
+    <a href="https://www.snapchat.com/@felunoowo" class="button" target="_blank">
+        <div id="snapchat">
+            <img src="logos/snapchat-logo.png" alt="Instagram Logo">Snapchat
         </div>
     </a>
     <br>
@@ -58,7 +79,7 @@
         </div>
     </a>
     <br>
-    <h2>Stuff</h2>
+    <h2>Anderer Stuff</h2>
     <a href="https://github.com/FelunoDoesStuff" class="button" target="_blank">
         <div id="github">
             <img src="logos/github-logo.png" alt="GitHub Logo">GitHub
