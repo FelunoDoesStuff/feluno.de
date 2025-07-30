@@ -1,41 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-    <title>Feluno.de - meine Links</title>
     <meta charset="utf-8">
+    <title>Feluno.de - meine Links</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <button id="mode-toggle">🌙 Dark Mode</button>
-
-    <script>
-    const toggleBtn = document.getElementById("mode-toggle");
-    toggleBtn.addEventListener("click", () => {
-        document.body.classList.toggle("dark");
-        document.body.classList.toggle("light");
-
-        if (document.body.classList.contains("dark")) {
-            toggleBtn.textContent = "☀️ Light Mode";
-        } else {
-            toggleBtn.textContent = "🌙 Dark Mode";
-        }
-    });
-    </script>
 
     <div class="profile">
-		<h1>Hi, ich bin Feluno!</h1>
+        <h1>Hi, ich bin Feluno!</h1>
         <img src="profile.jpg" alt="Profile Picture">
         <p>
-			About me:<br>
-			Ich bin 23, 🏳️‍🌈. In meiner Freizeit erstelle ich Mods für Transport Fever. Ich bin Eisenbahnfan und arbeite bei einem EVU. Ansonsten singe ich gerne :3
-		</p>
+            Ich bin 23, 🏳️‍🌈. In meiner Freizeit erstelle ich Mods für Transport Fever.  
+            Ich bin Eisenbahnfan und arbeite bei einem EVU.  
+            Ansonsten singe ich gerne :3
+        </p>
     </div>
     
-	<hr>
+    <hr>
     <h1>Wo ich zu finden bin:</h1>
-    
-    <br>
-	<h2>Socials</h2>
+
+    <h2>Socials</h2>
     <a href="https://bsky.app/profile/feluno.de" class="button" target="_blank">
         <div id="bsky">
             <img src="logos/bsky-logo.png" alt="Bluesky Logo">Bluesky
@@ -56,11 +42,6 @@
             <img src="logos/tfnet-logo.png" alt="tf|net Logo">tf|net
         </div>
     </a>
-<!--    <a href="https://www.reddit.com/user/-Feluno-/" class="button" target="_blank">
-        <div id="reddit">
-            <img src="logos/reddit-logo.png" alt="Reddit Logo">Reddit
-        </div>
-    </a> -->
     <a href="https://www.instagram.com/feluno.de" class="button" target="_blank">
         <div id="insta">
             <img src="logos/instagram-logo.png" alt="Instagram Logo">Insta
@@ -68,17 +49,17 @@
     </a>
     <a href="https://www.snapchat.com/@felunoowo" class="button" target="_blank">
         <div id="snapchat">
-            <img src="logos/snapchat-logo.png" alt="Instagram Logo">Snapchat
+            <img src="logos/snapchat-logo.png" alt="Snapchat Logo">Snapchat
         </div>
     </a>
-    <br>
+
     <h2>Messenger</h2>
     <a href="https://t.me/felunoowo" class="button" target="_blank">
         <div id="telegram">
             <img src="logos/telegram-logo.png" alt="Telegram Logo">Telegram
         </div>
     </a>
-    <br>
+
     <h2>Anderer Stuff</h2>
     <a href="https://github.com/FelunoDoesStuff" class="button" target="_blank">
         <div id="github">
@@ -90,5 +71,6 @@
             <img src="logos/map-logo.png" alt="Streckenkarte Logo">Streckenkarte
         </div>
     </a>
+
 </body>
 </html>
