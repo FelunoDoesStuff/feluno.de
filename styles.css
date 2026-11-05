@@ -91,7 +91,7 @@ a.button img {
 
 /* Hover Effekt */
 #bsky:hover, #discord:hover, #mastodon:hover, #tfnet:hover, #reddit:hover, 
-#insta:hover, #snapchat:hover, #telegram:hover, #github:hover, #strecken:hover {
+#insta:hover, #snapchat:hover, #telegram:hover, #github:hover, #strecken:hover, #traewelling:hover {
     background: #808080; 
     transform: scale(1.05); 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
